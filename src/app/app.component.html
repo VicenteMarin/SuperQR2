@@ -31,6 +31,12 @@
           <span *ngIf="!isCollapsed"> Vegano</span>
         </span>
       </a>
+      <a mat-list-item>
+        <span class="entry" [routerLink]="['/idioma']">
+          <mat-icon>language</mat-icon>
+          <span *ngIf="!isCollapsed"> Lenguaje</span>
+        </span>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
