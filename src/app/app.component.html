@@ -2,7 +2,7 @@
   <button mat-icon-button (click)="toggleMenu()">
       <mat-icon>menu</mat-icon>
     </button>    
-  SuperQR
+  <img src="/assets/logo.png" height="62px" width="202px" [routerLink]="['/']" />
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
@@ -10,13 +10,13 @@
       <a mat-list-item>
         <span class="entry" [routerLink]="['/']">
           <mat-icon>house</mat-icon>
-          <span *ngIf="!isCollapsed"> Inicio</span>
+          <span *ngIf="!isCollapsed"> Inicio </span>
         </span>
       </a>
       <a mat-list-item>
         <span class="entry" [routerLink]="['/platosPrincipales']">
           <mat-icon>restaurant</mat-icon>
-          <span *ngIf="!isCollapsed"> Platos principales</span>
+          <span *ngIf="!isCollapsed"> Platos principales </span>
         </span>
       </a>
       <a mat-list-item>
@@ -34,13 +34,13 @@
       <a mat-list-item>
         <span class="entry" [routerLink]="['/idioma']">
           <mat-icon>language</mat-icon>
-          <span *ngIf="!isCollapsed"> Lenguaje</span>
+          <span *ngIf="!isCollapsed"> Idioma</span>
         </span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <h1>Nombre del restaurante</h1>
+    <h1>Restaurant Las pruebas</h1>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>  
