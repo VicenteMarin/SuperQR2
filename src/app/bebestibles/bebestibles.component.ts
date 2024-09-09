@@ -1,16 +1,16 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button'; // Si usas botones
+import { MatIconModule } from '@angular/material/icon'; // Si usas íconos
 import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-bebestibles',
   standalone: true,
-  imports: [],
+  imports:  [MatCardModule, MatButtonModule, MatIconModule, CommonModule],
   templateUrl: './bebestibles.component.html',
-  styleUrls: ['./bebestibles.component.css'] // Cambiado a 'styleUrls'
+  styleUrl: './bebestibles.component.css' 
 })
 export class BebestiblesComponent {
   
