@@ -1,7 +1,11 @@
-button {
-    margin: 5px;
+.language-selection {
+    text-align: left;
+    margin-top: 20px;
   }
   
-  div {
-    margin-top: 10px;
+  .language-selection button, .language-selection select {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
   }
+  

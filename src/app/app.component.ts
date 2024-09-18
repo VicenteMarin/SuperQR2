@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatDividerModule} from '@angular/material/divider'
 import { CommonModule } from '@angular/common';
 import {MatListModule} from '@angular/material/list';
+import { TranslationService } from './translation.service';
 import {MatButtonModule} from '@angular/material/button'
 
 @Component({
@@ -26,6 +27,7 @@ export class AppComponent {
   sidenav!: MatSidenav;
   isCollapsed = true;
   isMobile= true;
+  selectedLanguage = 'es'; // Idioma por defecto
   toggleMenu() {
     if(this.isMobile){
       this.sidenav.toggle();
@@ -35,9 +37,15 @@ export class AppComponent {
       this.isCollapsed = !this.isCollapsed;
     }}
 
-  constructor(private observer: BreakpointObserver) {}
-
+    constructor(
+      private observer: BreakpointObserver,
+      private translationService: TranslationService  // Inyectar el servicio de traducción
+    ) {}
+  
   ngOnInit() {
+    // Cargar las traducciones para el idioma por defecto (español)
+    this.translationService.loadTranslations(this.selectedLanguage);
+
     this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
       if(screenSize.matches){
         this.isMobile = true;
@@ -47,5 +55,16 @@ export class AppComponent {
 
     });
 }
+  // Método para cambiar el idioma
+  changeLanguage(lang: string) {
+    this.selectedLanguage = lang;
+    this.translationService.changeLanguage(lang);
+  }
+  // Método para obtener las traducciones de las claves
+  getTranslation(key: string): string {
+    return this.translationService.getTranslation(key);
+  }
+
+
 
 }
