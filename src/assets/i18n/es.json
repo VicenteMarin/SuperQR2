@@ -5,6 +5,8 @@
     "drinks": "Bebestibles",
     "vegan": "Vegano",
     "language": "Lenguaje",
-    "restaurantName": "Nombre del restaurante"
+    "restaurantName": "Nombre del restaurante",
+    "welcome" : "¡Bienvenido a restaurant La prueba!",
+    "instructions" : "Empieza aquí tu pedido:"
   }
   

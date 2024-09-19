@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';  // Importa HttpClientModule
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
@@ -13,10 +14,12 @@ import {MatListModule} from '@angular/material/list';
 import { TranslationService } from './translation.service';
 import {MatButtonModule} from '@angular/material/button'
 
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MatSidenavModule, MatOptionModule, MatIconModule, MatToolbarModule, MatDividerModule, MatListModule, RouterLink, MatButtonModule],
+  imports: [RouterOutlet, CommonModule, MatSidenavModule, MatOptionModule, MatIconModule, MatToolbarModule, MatDividerModule, MatListModule, RouterLink, MatButtonModule, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

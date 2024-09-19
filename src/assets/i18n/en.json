@@ -5,6 +5,8 @@
     "drinks": "Drinks",
     "vegan": "Vegan",
     "language": "Language",
-    "restaurantName": "Restaurant Name"
+    "restaurantName": "Restaurant Name",
+    "welcome" : "¡Welcome to restaurant La Prueba!",
+    "instructions" : "Start your order here"
   }
   

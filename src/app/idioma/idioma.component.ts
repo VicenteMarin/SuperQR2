@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { TranslationService } from '../translation.service';  // Importa el servicio
-
+import { HttpClientModule } from '@angular/common/http'; // Importar HttpClientModule
 @Component({
   selector: 'app-idioma',
   standalone: true,
-  imports: [],
+  imports: [HttpClientModule],
   templateUrl: './idioma.component.html',
   styleUrl: './idioma.component.css'
 })
