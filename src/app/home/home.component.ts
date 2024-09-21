@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']  // 'styleUrls' en lugar de 'styleUrl'
+  styleUrls: ['./home.component.css']  
 })
 export class HomeComponent implements OnInit, OnDestroy {
   welcome: string = '';
@@ -27,8 +27,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   // Método para cargar traducciones
   loadTranslations() {
-    this.welcome = this.translationService.getTranslation('¡Bienvenido a restaurant La prueba!');
-    this.instructions = this.translationService.getTranslation('Empieza aquí tu pedido');
+    this.welcome = this.translationService.getTranslation('welcome');
+    this.instructions = this.translationService.getTranslation('instructions');
   }
 
   ngOnDestroy() {
