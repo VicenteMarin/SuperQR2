@@ -1,7 +1,8 @@
 <mat-toolbar color="primary">
   <button mat-icon-button (click)="toggleMenu()">
       <mat-icon>menu</mat-icon>
-    </button>    
+    </button>
+    {{ getTranslation('menu') }}   
   <img src="/assets/logo.png" height="62px" width="202px" [routerLink]="['/']" />
   <button mat-icon-button style="position: relative; left: 80%;">
     <mat-icon>shopping_cart</mat-icon>
@@ -13,37 +14,42 @@
       <a mat-list-item>
         <span class="entry" [routerLink]="['/']">
           <mat-icon>house</mat-icon>
-          <span *ngIf="!isCollapsed"> Inicio </span>
+          <span *ngIf="!isCollapsed"> {{ getTranslation('home') }}</span>
         </span>
       </a>
       <a mat-list-item>
         <span class="entry" [routerLink]="['/platosPrincipales']">
           <mat-icon>restaurant</mat-icon>
-          <span *ngIf="!isCollapsed"> Platos principales </span>
+          <span *ngIf="!isCollapsed"> {{ getTranslation('mainCourses') }} </span>
         </span>
       </a>
       <a mat-list-item>
         <span class="entry" [routerLink]="['/bebestibles']">
           <mat-icon>local_bar</mat-icon>
-          <span *ngIf="!isCollapsed"> Bebestibles</span>
+          <span *ngIf="!isCollapsed"> {{ getTranslation('drinks') }}</span>
         </span>
       </a>
       <a mat-list-item>
         <span class="entry" [routerLink]="['/vegano']">
           <mat-icon>eco</mat-icon>
-          <span *ngIf="!isCollapsed"> Vegano</span>
+          <span *ngIf="!isCollapsed"> {{ getTranslation('vegan') }}</span>
         </span>
       </a>
       <a mat-list-item>
         <span class="entry" [routerLink]="['/idioma']">
           <mat-icon>language</mat-icon>
-          <span *ngIf="!isCollapsed"> Idioma</span>
+          <span *ngIf="!isCollapsed"> {{ getTranslation('language') }}</span>
         </span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <h1>Restaurant Las pruebas</h1>
+    <h1>{{ getTranslation('Restaurante Las Pruebas') }}</h1>
     <router-outlet></router-outlet>
+    <!-- <div>
+      <button mat-raised-button (click)="changeLanguage('es')">Español</button>
+      <button mat-raised-button (click)="changeLanguage('en')">English</button>
+    </div> -->
+
   </mat-sidenav-content>
 </mat-sidenav-container>  
