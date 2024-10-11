@@ -20,7 +20,6 @@ export class PlatosPrincipalesComponent {
   constructor(private sus: SupabaseService){
     this.platosPrincipales = [];
     //this.platosPrueba();
-    console.log("paso 0");
     this.getPlatos();
   }
 
@@ -50,9 +49,7 @@ export class PlatosPrincipalesComponent {
     //const result = await fetch('');
     //const response = (await result.json()) as any[];
     //this.platosPrincipales = response;
-    console.log("Paso 1");
     this.platosPrincipales = await this.sus.getPlatos();
-    console.log("Paso 3");
     console.log(this.platosPrincipales);
   }
 

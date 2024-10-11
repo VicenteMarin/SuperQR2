@@ -19,7 +19,7 @@ export class BebestiblesComponent {
   constructor() {
     this.bebestiblesPrincipales = [];
     this.bebestiblesPrueba();
-    this.getBebestibles(); // Llama a getBebestibles para obtener datos reales
+    //this.getBebestibles(); // Llama a getBebestibles para obtener datos reales
   }
 
   async bebestiblesPrueba() {

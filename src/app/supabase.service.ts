@@ -27,7 +27,6 @@ export class SupabaseService {
     const datos = await this.supabase
     .from('plato_principal')
     .select('*')
-    console.log("Paso 2");
     return datos.data || []
   }
 
