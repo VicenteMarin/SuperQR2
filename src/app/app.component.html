@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="toggleMenu()">
+  <button mat-icon-button (click)="toggleMenu()" style="left: 0%">
       <mat-icon>menu</mat-icon>
     </button>
     {{ getTranslation('menu') }}   
   <img src="/assets/logo.png" height="62px" width="202px" [routerLink]="['/']" />
-  <button mat-icon-button style="left: 80%;">
+  <button mat-icon-button >
     <mat-icon>shopping_cart</mat-icon>
   </button>
 </mat-toolbar>
