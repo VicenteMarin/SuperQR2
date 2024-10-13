@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createClient} from '@supabase/supabase-js';
+const supabaseURL = 'https://utzigyzeijlgmmgojnrw.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0emlneXplaWpsZ21tZ29qbnJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYyODIwOTQsImV4cCI6MjA0MTg1ODA5NH0.PZJb53h5yJ5VFzG7FJar1qCDZBYYD5jH2odMeFngsJo';
+const supabase = createClient(supabaseURL, supabaseKey);
 
 @Injectable({
   providedIn: 'root'
 })
 export class SupabaseService {
-  private supabase: SupabaseClient;
-
   constructor() {
-    this.supabase = createClient('https://utzigyzeijlgmmgojnrw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0emlneXplaWpsZ21tZ29qbnJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYyODIwOTQsImV4cCI6MjA0MTg1ODA5NH0.PZJb53h5yJ5VFzG7FJar1qCDZBYYD5jH2odMeFngsJo');
+
   }
 
-  async insertOrder(orderData: any) {
-    const { data, error } = await this.supabase
+  /*async insertOrder(orderData: any) {
+    const { data, error } = await supabase
       .from('pedido')
       .insert(orderData);
 
@@ -21,17 +22,17 @@ export class SupabaseService {
     }
 
     return data;
-  }
+  }*/
 
   async getPlatos() {
-    const datos = await this.supabase
-    .from('plato_principal')
+    const datos = await supabase
+    .from('producto')
     .select('*')
     return datos.data || []
   }
 
-  async insertOrderDetail(orderDetailData: any) {
-    const { data, error } = await this.supabase
+ /* async insertOrderDetail(orderDetailData: any) {
+    const { data, error } = await supabase
       .from('pedido_detalle')
       .insert(orderDetailData);
 
@@ -40,5 +41,5 @@ export class SupabaseService {
     }
 
     return data;
-  }
+  }*/
 }

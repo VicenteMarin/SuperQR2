@@ -50,12 +50,11 @@ export class PlatosPrincipalesComponent {
     //const response = (await result.json()) as any[];
     //this.platosPrincipales = response;
     this.platosPrincipales = await this.sus.getPlatos();
-    console.log(this.platosPrincipales);
   }
 
   mostrarInfo(plato: any){
     Swal.fire({
-      title: `${plato.nombre_plato_principal}`,
+      title: `${plato.nombre_producto}`,
       html: `${plato.descripcion}<br>Valor: $${plato.precio}`,
       confirmButtonText: 'Agregar al carrito',
       confirmButtonColor: '#71cf13',
