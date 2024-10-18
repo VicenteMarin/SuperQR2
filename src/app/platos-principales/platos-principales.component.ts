@@ -16,7 +16,7 @@ import { SupabaseService } from '../supabase.service';
 export class PlatosPrincipalesComponent {
 
 
-  platosPrincipales: any[];
+  platosPrincipales: any;
   constructor(private sus: SupabaseService){
     this.platosPrincipales = [];
     //this.platosPrueba();
